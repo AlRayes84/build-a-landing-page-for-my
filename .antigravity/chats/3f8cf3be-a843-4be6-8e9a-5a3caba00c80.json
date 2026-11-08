@@ -4,5 +4,18 @@
   "createdAt": "2026-11-08T19:39:19.406Z",
   "filename": "3f8cf3be-a843-4be6-8e9a-5a3caba00c80.json",
   "geminiStarted": false,
-  "messages": []
+  "messages": [
+    {
+      "id": "67785eaa-bd3d-4a56-8c56-1c1d9f9b23f6",
+      "role": "user",
+      "content": "vpn apk",
+      "status": "pending",
+      "model": "gemini-3.8-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-11-08T19:39:21.860Z",
+      "sender": "ios",
+      "is_cancelled": false
+    }
+  ]
 }
