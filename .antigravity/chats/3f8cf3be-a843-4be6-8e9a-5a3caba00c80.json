@@ -16,6 +16,18 @@
       "created_at": "2026-11-08T19:39:21.860Z",
       "sender": "ios",
       "is_cancelled": false
+    },
+    {
+      "id": "8e98bda7-daea-4a1c-bf73-d249e54aa1ee",
+      "role": "user",
+      "content": "vpn apk",
+      "status": "pending",
+      "model": "gemini-3.8-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-11-08T19:41:39.252Z",
+      "sender": "ios",
+      "is_cancelled": false
     }
   ]
 }
