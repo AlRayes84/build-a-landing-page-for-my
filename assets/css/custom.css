@@ -1,0 +1,179 @@
+/* Custom styles & animations for NexusVPN Landing Page */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-glow: rgba(16, 185, 129, 0.25);
+    --cyan-glow: rgba(6, 182, 212, 0.25);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #030712;
+    color: #f3f4f6;
+    overflow-x: hidden;
+}
+
+code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Cyber Grid Background */
+.bg-cyber-grid {
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 60%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.bg-dot-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Glow Utilities */
+.shadow-neon-emerald {
+    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.5), 0 0 10px -2px rgba(16, 185, 129, 0.3);
+}
+
+.shadow-neon-cyan {
+    box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.5), 0 0 10px -2px rgba(6, 182, 212, 0.3);
+}
+
+.glow-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-card:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Shimmer Button Sweep */
+.btn-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 70%
+    );
+    transform: rotate(30deg) translateX(-100%);
+    animation: shimmer 5s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: rotate(30deg) translateX(100%);
+    }
+}
+
+/* Pulsing radar waves for phone connect button */
+@keyframes pulse-wave {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+.animate-pulse-wave-1 {
+    animation: pulse-wave 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.animate-pulse-wave-2 {
+    animation: pulse-wave 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite 0.8s;
+}
+
+/* Phone Frame Realistic Bezel */
+.phone-mockup-frame {
+    border: 10px solid #1e293b;
+    border-radius: 44px;
+    box-shadow: 
+        0 0 0 2px rgba(255, 255, 255, 0.1),
+        0 25px 60px -15px rgba(0, 0, 0, 0.8),
+        0 0 40px -10px rgba(16, 185, 129, 0.2);
+    background: #0b0f19;
+}
+
+/* Phone camera punchhole */
+.camera-punchhole {
+    width: 14px;
+    height: 14px;
+    background: #030712;
+    border-radius: 50%;
+    border: 2px solid #1e293b;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+}
+
+/* Accordion transition */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.faq-answer.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Toast */
+#toast {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Floating bottom bar */
+#sticky-download-bar {
+    transform: translateY(120%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#sticky-download-bar.visible {
+    transform: translateY(0);
+}
